@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Operador | PTAR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/panel_operador.css" />
+</head>
+<body>
+  <script>
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.body.classList.add("dark");
+    }
+  </script>
+
+  <!-- NAV -->
+  <header>
+    <nav>
+      <div class="logo">
+        <span class="siglas">PTAR</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="reporte.html">Enviar Reporte</a></li>
+        <li><a href="panel_operador.html">Panel</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="logout.php">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="panel-operador">
+    <section class="bienvenida">
+      <h2>Hola, Operador</h2>
+      <p>Aquí puedes enviar reportes de mantenimiento rápidamente.</p>
+    </section>
+
+    <section class="acceso-reporte">
+      <a class="btn-reporte" href="reporte.html">📝 Enviar nuevo reporte</a>
+    </section>
+
+    <section class="info-rápida">
+      <h3>Recomendaciones del día</h3>
+      <ul>
+        <li>✔️ Verifica el estado de válvulas y bombas.</li>
+        <li>⚠️ No olvides revisar niveles de pH y cloro.</li>
+        <li>📸 Toma evidencia fotográfica si detectas un fallo.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

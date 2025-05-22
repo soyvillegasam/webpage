@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reporte de Mantenimiento | PTAR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/reporte.css" />
+</head>
+<body>
+  <script>
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.body.classList.add("dark");
+    }
+  </script>
+
+   <header>
+    <nav>
+      <div class="logo">
+       <img src="images/favicon.png" alt="Logo PTAR" />
+    <span class="siglas">PTAR</span>
+     </div>
+
+      <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="index.html" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="reporte.html" class="nav__links">Reporte</a>
+                </li>
+                <li class="nav__items">
+                    <a href="panel.html" class="nav__links">Panel</a>
+                </li>
+                <li class="nav__items">
+                    <a href="contacto.html" class="nav__links">Contacto</a>
+                </li>
+                <li class="nav__items">
+                    <a href="login.html" class="nav__links">Login</a>
+                </li>
+                <li class="nav__items">
+                  <a href="logout.php" class="nav__links">Cerrar sesión</a></li>
+
+                <img src="./images/close.svg" class="nav__close">
+            </ul>
+
+            <div class="nav__menu">
+                <img src="./images/menu.svg" class="nav__img">
+            </div>
+
+    </nav>
+  </header>
+
+
+ 
+
+  <main class="reporte-container">
+    <h2>Formulario de Mantenimiento</h2>
+
+    <form class="formulario-reporte" action="php/guardar_reporte.php" method="post">
+      <input type="text" name="nombre" placeholder="Nombre del operador" required />
+
+      <input type="date" name="fecha" value="<?php echo date('Y-m-d'); ?>" required />
+
+      <select name="equipo" required>
+        <option value="" disabled selected>Seleccione el equipo</option>
+        <option value="Bomba 1">Bomba 1</option>
+        <option value="Filtro 2">Filtro 2</option>
+        <option value="Sedimentador">Sedimentador</option>
+        <option value="Clorador">Clorador</option>
+      </select>
+
+      <textarea name="descripcion" rows="5" placeholder="Descripción del problema o inspección..." required></textarea>
+
+      <button type="submit">Enviar reporte</button>
+    </form>
+  </main>
+  <script src="./js/menu.js"></script>
+</body>
+</html>

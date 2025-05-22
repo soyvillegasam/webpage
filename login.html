@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | PTAR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <span class="siglas">PTAR</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="reporte.html">Reporte</a></li>
+      <li><a href="panel.html">Panel</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Modo oscuro automático -->
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+    }
+  </script>
+
+  <main class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form class="login-form" action="php/login.php" method="post">
+      <input type="text" name="usuario" placeholder="Usuario" required />
+
+      <div class="password-group">
+        <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required />
+        <button type="button" id="togglePassword" aria-label="Mostrar contraseña">
+          <span class="eye-icon">👁</span>
+        </button>
+      </div>
+
+      <button type="submit">Ingresar</button>
+    </form>
+  </main>
+
+  <!-- Mostrar/ocultar contraseña -->
+  <script>
+    const toggleBtn = document.getElementById('togglePassword');
+    const passInput = document.getElementById('contrasena');
+
+    toggleBtn.addEventListener('click', () => {
+      const tipo = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passInput.setAttribute('type', tipo);
+      toggleBtn.querySelector('.eye-icon').textContent = tipo === 'text' ? '👁' : '👁';
+    });
+  </script>
+
+  
+  <script src="./js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Usuario | PTAR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/panel.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <script>
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.body.classList.add("dark");
+    }
+  </script>
+
+  <!-- NAV -->
+  <header>
+    <nav>
+      <div class="logo">
+        <span class="siglas">PTAR</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="reporte.html">Reportes</a></li>
+        <li><a href="panel_usuario.html">Panel</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="logout.php">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD -->
+  <main class="dashboard">
+    <section class="bienvenida">
+      <h2>Bienvenido, Usuario</h2>
+      <p>Resumen general de la planta de tratamiento de agua.</p>
+    </section>
+
+    <section class="resumen">
+      <div class="card">
+        <h3>🔧 Reportes totales</h3>
+        <p>125</p>
+      </div>
+      <div class="card">
+        <h3>🚨 Alertas recientes</h3>
+        <p>4</p>
+      </div>
+      <div class="card">
+        <h3>✅ Última inspección</h3>
+        <p>14 mayo 2025</p>
+      </div>
+    </section>
+
+<section class="graficas">
+  <div class="grafica-card full">
+    <h3>Nivel de Agua Tratada (Litros)</h3>
+    <canvas id="graficaAgua"></canvas>
+  </div>
+  <div class="grafica-card full">
+    <h3>Índice de Contaminantes</h3>
+    <canvas id="graficaContaminantes"></canvas>
+  </div>
+</section>
+
+
+    <section class="tabla-reportes">
+      <h3>Reportes recientes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Equipo</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>20/05/2025</td>
+            <td>Bomba 2</td>
+            <td>Fuga detectada en válvula principal</td>
+          </tr>
+          <tr>
+            <td>19/05/2025</td>
+            <td>Filtro 1</td>
+            <td>Obstrucción parcial del sistema</td>
+          </tr>
+          <tr>
+            <td>18/05/2025</td>
+            <td>Sedimentador</td>
+            <td>Revisión periódica sin fallas</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const aguaCtx = document.getElementById("graficaAgua");
+    const contaminantesCtx = document.getElementById("graficaContaminantes");
+
+    new Chart(aguaCtx, {
+      type: "line",
+      data: {
+        labels: ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"],
+        datasets: [{
+          label: "Litros",
+          data: [1200, 1400, 1600, 1350, 1800, 1900, 1700],
+          fill: true,
+          tension: 0.4
+        }]
+      }
+    });
+
+    new Chart(contaminantesCtx, {
+      type: "bar",
+      data: {
+        labels: ["pH", "Turbidez", "Cloro", "Nitratos"],
+        datasets: [{
+          label: "Nivel",
+          data: [6.8, 3.2, 0.5, 1.1]
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
