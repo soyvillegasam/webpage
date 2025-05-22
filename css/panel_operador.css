@@ -1,0 +1,54 @@
+.panel-operador {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bienvenida {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.acceso-reporte {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.btn-reporte {
+  display: inline-block;
+  padding: 14px 30px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+}
+
+.btn-reporte:hover {
+  background-color: #333;
+}
+
+body.dark .btn-reporte {
+  background-color: #fff;
+  color: #000;
+}
+
+.info-rápida {
+  background: #f8f8f8;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+body.dark .info-rápida {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.info-rápida ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  line-height: 1.6;
+}

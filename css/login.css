@@ -1,0 +1,131 @@
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+body.dark .login-container {
+  background: #1e1e1e;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-form input {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+body.dark .login-form input {
+  background: #222;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+.login-form button[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #333;
+}
+
+.password-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-group input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #777;
+}
+
+#togglePassword:hover {
+  color: #111;
+}
+
+body.dark #togglePassword:hover {
+  color: #fff;
+}
+header {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+}
+
+.siglas {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #0ea5e9;
+}
